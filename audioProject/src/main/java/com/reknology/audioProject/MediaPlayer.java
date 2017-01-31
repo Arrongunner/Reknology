@@ -200,5 +200,9 @@ import java.io.FileNotFoundException;
 			decibels = decibels==null ? 0.0F : decibels;
 			this.volume_dB = decibels;
 		}
+		
+		
+		//new media player
+
 	}
 

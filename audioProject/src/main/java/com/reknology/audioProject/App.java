@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 import javax.sound.sampled.AudioInputStream;
@@ -19,9 +20,8 @@ public class App
 	
     public static void main( String[] args )
     {
-    	//appTest();
-    	consoleStart();   
-    	//playSound("Sounds/DAMN.wav");
+    //	consoleStart();
+    	beat();
     }
     public static void consoleStart(){
 		String file = scanner.next();
@@ -43,43 +43,22 @@ public class App
 		}
 		scanner.close();
     }
-    
-    public static void appTest(){
-    	SoundClipTest soundClipTest = new SoundClipTest();
-    	
-    }
-    
-    static void playSound(String soundFile) {
-        File f = new File(soundFile);
-        AudioInputStream audioIn = null;
-		try {
-			audioIn = AudioSystem.getAudioInputStream(f.toURI().toURL());
-		} catch (MalformedURLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (UnsupportedAudioFileException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}  
-        Clip clip = null;
-		try {
-			clip = AudioSystem.getClip();
-		} catch (LineUnavailableException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public static void beat(){
+		MediaPlayer mediaPlayer = new MediaPlayer("hit.wav");
+		int time = 1;
+		int gap = 200;
+		while(time < 100){
+			mediaPlayer.play();
+			time++;
+			try {
+				Thread.sleep(gap);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
-        try {
-			clip.open(audioIn);
-		} catch (LineUnavailableException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        clip.start();
-    }
+	}
+
+		
 }
