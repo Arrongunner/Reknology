@@ -27,7 +27,11 @@ import java.io.FileNotFoundException;
 	    private volatile boolean pauseFlag = false;
 	    private volatile boolean isPlayingFlag = false;
 	    private volatile float volume_dB = 0.0f;
-
+	    
+	    public void setFilename(String filename){
+	    	this.filename = filename;
+	    }
+	    
 	    public MediaPlayer()
 	    {
 	    }

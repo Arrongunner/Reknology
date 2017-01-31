@@ -21,8 +21,19 @@ public class App
     public static void main( String[] args )
     {
     //	consoleStart();
-    	beat();
+    //	beat();
+    //	begin();
     }
+    
+    public static void begin(){
+    	MediaPlayer mediaPlayer = new MediaPlayer();
+    	SoundPlayer soundPlayer = new SoundPlayer(mediaPlayer, "hit.wav",100,10);
+    	soundPlayer.start();
+    	SoundPlayer soundPlayer2 = new SoundPlayer(mediaPlayer, "drum.wav",100,10);
+    	soundPlayer2.start();
+    }
+    
+    
     public static void consoleStart(){
 		String file = scanner.next();
 		MediaPlayer mediaPlayer = new MediaPlayer(file);
