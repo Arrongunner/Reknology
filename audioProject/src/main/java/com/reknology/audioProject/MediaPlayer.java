@@ -1,6 +1,7 @@
 package com.reknology.audioProject;
 
-	import java.io.FileNotFoundException;
+	import java.io.File;
+import java.io.FileNotFoundException;
 	import java.io.IOException;
 	import java.net.URL;
 
@@ -54,8 +55,8 @@ package com.reknology.audioProject;
 	        else //if (filename.toLowerCase().endsWith(".mp3") || filename.toLowerCase().endsWith(".ogg"))
 	        {
 	        	
-	        	final URL fileurl = new URL("file:///"+filename);
-	            final AudioInputStream in = AudioSystem.getAudioInputStream(fileurl);
+	        	final File file = new File("./Sounds/"+filename);
+	            final AudioInputStream in = AudioSystem.getAudioInputStream(file);
 
 	            final AudioFormat baseFormat = in.getFormat();
 	            audioFormat = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED,
