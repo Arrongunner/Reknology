@@ -8,6 +8,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Branched!" );
+        System.out.println( "merge with master!" );
     }
 }
